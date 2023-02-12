@@ -31,3 +31,9 @@ if __name__ == '__main__':
     print("SPECIAL FEATURES")
     for i in instrument_list:
         i.special_features()
+
+    print("------------------------------------OUTPUT 8------------------------------------")
+    print("All instruments in price ascending order:")
+    instrument_list.sort()
+    for i in instrument_list:
+        print("{} price: {}".format(i.__class__.__name__, i.value))
