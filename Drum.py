@@ -5,22 +5,16 @@ import math
 
 class Drum(PercussionFamily):
 
-    def __init__(self, radius, diameter):
-        super().__init__(Drum)
+    def __init__(self, keys, diameter):
+        super().__init__(
+            349.50,
+            'By hitting the membrane with sticks',
+            'Replace the membrane',
+            keys
+        )
         self.diameter = diameter
-        self.radius = radius
+        self.diameter_in_inch = diameter / 2.54
 
     def make_sound(self):
-        print('Vibrating stretched membrane')
+        return 'Vibrating stretched membrane'
 
-    def how_to_repair(self):
-        print('Replace the membrane')
-
-    def get_price(self):
-        return '$', 349.50
-
-    def how_to_play(self):
-        print('By hitting the membrane with sticks')
-
-    def diameter_in_inch(self):
-        return self.diameter / 2.54

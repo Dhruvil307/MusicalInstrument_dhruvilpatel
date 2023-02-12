@@ -3,16 +3,14 @@ from Interfaces import Repairable, PriceProvider, Playable
 
 
 # Abstract Class
-class MusicalInstrument(Repairable, PriceProvider, Playable, ABC):
+class MusicalInstrument(PriceProvider):
+
+    def __init__(self, value):
+        self.value = value
+
     @abstractmethod
     def make_sound(self):
         pass
 
-    def how_to_repair(self):
-        pass
-
     def get_price(self):
-        pass
-
-    def how_to_play(self):
-        pass
+        print("The price: ${}".format(self.value))

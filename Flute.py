@@ -3,11 +3,11 @@ from WoodwindFamily import WoodwindFamily
 
 class Flute(WoodwindFamily):
 
+    def __init__(self):
+        super().__init__(
+            74.99,
+            'By blowing into the flute'
+        )
+
     def make_sound(self):
-        print('Guiding a stream of air')
-
-    def PriceProvider(self):
-        return '$', 74.99
-
-    def how_to_play(self):
-        print('By blowing into the flute')
+        return 'Guiding a stream of air'

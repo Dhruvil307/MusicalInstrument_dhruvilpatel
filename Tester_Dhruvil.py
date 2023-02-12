@@ -1,9 +1,9 @@
 from Drum import Drum
 from Flute import Flute
 from Harp import Harp
-from Piano import Piano
 from Violin import Violin
 from Xylophone import Xylophone
+from Piano import Piano
 
 from MusicalInstrument import Repairable, PriceProvider, Playable, MusicalInstrument
 
@@ -18,19 +18,11 @@ if __name__ == '__main__':
 
     instrument_list = [drum, flute, harp, piano, violin, xylophone]
 
-    for i in instrument_list:
-
-        if isinstance(i, MusicalInstrument):
-            i.make_sound()
-        if isinstance(i, Playable):
-            i.how_to_play()
+    for indx, i in enumerate(instrument_list):
+        print("------------------------------------OUTPUT {}------------------------------------".format(indx))
+        print("Details of ", i.__class__.__name__)
+        print("Makes sound:", i.make_sound())
+        i.how_to_play()
         if isinstance(i, Repairable):
             i.how_to_repair()
-        if isinstance(i, PriceProvider):
-            i.get_price()
-
-        print(f'Details of {i}')
-        print(f'Make Sound: {i.make_sound}')
-        print(f'Play Method: {i.how_to_play}')
-        print(f'Repair Method: {i.how_to_repair}')
-        print(f'The price: {i.get_price}')
+        i.get_price()
