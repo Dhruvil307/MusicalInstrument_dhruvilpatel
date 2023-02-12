@@ -1,10 +1,12 @@
 from Drum import Drum
 from Flute import Flute
 from Harp import Harp
+from PercussionFamily import PercussionFamily
+from StringFamily import StringFamily
 from Violin import Violin
 from Xylophone import Xylophone
 from Piano import Piano
-
+from Order import Order
 from MusicalInstrument import Repairable, PriceProvider, Playable, MusicalInstrument
 
 if __name__ == '__main__':
@@ -37,3 +39,18 @@ if __name__ == '__main__':
     instrument_list.sort()
     for i in instrument_list:
         print("{} price: {}".format(i.__class__.__name__, i.value))
+
+    order_Bob = Order(111, "Bob")  # id of the order = 111 and customer name = Bob
+    order_Alice = Order(222, "Alice")  # id of the order = 222 and customer name = Alice
+
+    for i in instrument_list:
+        if isinstance(i, PercussionFamily):
+            order_Bob.add_instrument(i)
+        if isinstance(i, StringFamily):
+            order_Alice.add_instrument(i)
+
+    print("------------------------------------OUTPUT 9------------------------------------")
+    print("Order total for Bob ({}): {}".format(order_Bob.o_id, order_Bob.get_total()))
+    print("Order total for Alice ({}): {}".format(order_Alice.o_id, order_Alice.get_total()))
+
+    print("------------------------------------CUSTOM ORDER------------------------------------")
