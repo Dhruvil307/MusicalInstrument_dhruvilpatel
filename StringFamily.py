@@ -5,9 +5,10 @@ from Interfaces import *
 
 
 class StringFamily(Playable, Repairable, MusicalInstrument):
-    def __init__(self, value, htp="", htr="", nstrings=0):
+    def __init__(self, value, htp="", htr="", nstrings=0, name=""):
         super(StringFamily, self).__init__(value)
         self.no_of_strings = nstrings
+        self.instrument = name
         self.htp = htp
         self.htr = htr
 
@@ -16,3 +17,6 @@ class StringFamily(Playable, Repairable, MusicalInstrument):
 
     def how_to_repair(self):
         print("Repair method: {}".format(self.htr))
+
+    def special_features(self):
+        print("String count of {} is: {}".format(self.instrument, self.no_of_strings))

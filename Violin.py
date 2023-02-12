@@ -8,7 +8,8 @@ class Violin(StringFamily):
             350.00,
             'By resting the violin on shoulder, plucking the strings bow and picking notes with fingers',
             'Replace the broken bridge',
-            nstrings
+            nstrings,
+            "Violin"
         )
 
     def make_sound(self):

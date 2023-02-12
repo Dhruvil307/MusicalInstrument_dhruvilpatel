@@ -10,7 +10,8 @@ class Drum(PercussionFamily):
             349.50,
             'By hitting the membrane with sticks',
             'Replace the membrane',
-            keys
+            keys,
+            "Drum"
         )
         self.diameter = diameter
         self.diameter_in_inch = diameter / 2.54

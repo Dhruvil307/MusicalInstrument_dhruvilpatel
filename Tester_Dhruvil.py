@@ -16,13 +16,18 @@ if __name__ == '__main__':
     violin = Violin(4)  # this violin has 4 strings
     xylophone = Xylophone(25)  # this xylophone has 25 keys
 
-    instrument_list = [drum, flute, harp, piano, violin, xylophone]
+    instrument_list = [drum, flute, harp, violin, xylophone, piano]
 
     for indx, i in enumerate(instrument_list):
-        print("------------------------------------OUTPUT {}------------------------------------".format(indx))
+        print("------------------------------------OUTPUT {}------------------------------------".format(indx+1))
         print("Details of ", i.__class__.__name__)
         print("Makes sound:", i.make_sound())
         i.how_to_play()
         if isinstance(i, Repairable):
             i.how_to_repair()
         i.get_price()
+
+    print("------------------------------------OUTPUT 7------------------------------------")
+    print("SPECIAL FEATURES")
+    for i in instrument_list:
+        i.special_features()

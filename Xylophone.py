@@ -8,7 +8,8 @@ class Xylophone(PercussionFamily):
             49.00,
             'By hitting bars with two mallets',
             'Replace the broken keys',
-            keys
+            keys,
+            "Xylophone"
         )
 
     def make_sound(self):

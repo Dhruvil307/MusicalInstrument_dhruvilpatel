@@ -8,7 +8,8 @@ class Harp(StringFamily):
             255.00,
             'By strumming the strings and peddling to adjust the string lengths',
             'Replace the broken strings',
-            nstrings
+            nstrings,
+            "Harp"
         )
 
     def make_sound(self):
